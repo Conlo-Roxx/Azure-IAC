@@ -4,9 +4,7 @@
   "parameters": {
     "adminUsername": {
       "value": "ryanadmin"
-    },
-    "adminPassword": {
-      "value": "ChangeMe123!"
     }
-  }
+    }
 }
+
