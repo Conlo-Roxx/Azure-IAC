@@ -24,7 +24,7 @@ jobs:
 
       - name: Deploy
         run: |
-          az deployment group create \
+          az deployment group validate \
             --resource-group test-iac-rg-prod \
             --template-file Bicep/env/production/main.bicep \
             --parameters @Bicep/env/production/params.prod.json \
