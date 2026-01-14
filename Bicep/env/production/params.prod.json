@@ -4,7 +4,9 @@
   "parameters": {
     "adminUsername": {
       "value": "ryanadmin"
-    }
-    }
+        },
+    "adminPassword": {
+      "value": "${{ secrets.ADMIN_PASSWORD_VM}}"
+        }
+      }     
 }
-

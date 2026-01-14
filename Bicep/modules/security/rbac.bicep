@@ -7,10 +7,6 @@ param principalId string
 @description('Role definition GUID')
 param roleDefinitionGuid string
 
-@secure()
-@description('VM admin password to store as secret')
-param adminPassword string
-
 // Existing resource for Key Vault
 resource kv 'Microsoft.KeyVault/vaults@2023-07-01' existing = {
   name: keyVaultName
@@ -32,13 +28,6 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-prev
     principalId: principalId                 // this is set in the main bicep file from the VM's managed identity
     principalType: 'ServicePrincipal' 
   }
-resource vmAdminSecret 'Microsoft.KeyVault/vaults/secrets@2022-07-01' = {
-  parent: kv  
-  name: 'vm-admin-password' 
-  properties: {
-    value: adminPassword
-  }
-}
   dependsOn: [
     kv
   ]
