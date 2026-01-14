@@ -28,3 +28,11 @@ module compute '../../modules/compute/main.bicep' = {
     adminPassword: adminPassword
   }
 }
+module rbac '../../modules/security/rbac.bicep' = {
+  name: 'rbac'
+  params: {
+    scopeId: keyVault.outputs.vaultId
+    principalId: compute.outputs.vmPrincipalId
+    roleDefinitionGuid: secretsUserRoleGuid
+  }
+}

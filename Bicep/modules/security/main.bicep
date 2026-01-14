@@ -7,9 +7,6 @@ param location string
 @description('Enable soft delete')
 param enableSoftDelete bool = false
 
-@description('Enable purge protection')
-param enablePurgeProtection bool = false
-
 resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
   name: keyVaultName
   location: location
@@ -24,7 +21,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
     enabledForDiskEncryption: true
     enabledForTemplateDeployment: true
     enableSoftDelete: enableSoftDelete
-    enablePurgeProtection: enablePurgeProtection
     accessPolicies: []
   }
 }
