@@ -4,6 +4,9 @@
   "parameters": {
     "adminUsername": {
       "value": "ryanadmin"
-        }     
+    },
+    "adminPassword": {
+      "value": ""
+    }
   }
 }
