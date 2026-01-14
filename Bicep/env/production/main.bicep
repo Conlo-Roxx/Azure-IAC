@@ -28,11 +28,11 @@ module compute '../../modules/compute/main.bicep' = {
     adminPassword: adminPassword
   }
 }
-module rbac '../../modules/security/rbac.bicep' = {
-  name: 'rbac'
+module kvRbac '../../modules/security/rbac.bicep' = {
+  name: 'kvRbac'
   params: {
-    scopeId: keyVault.outputs.vaultId
+    keyVaultName: keyVault.outputs.vaultName   
     principalId: compute.outputs.vmPrincipalId
-    roleDefinitionGuid: secretsUserRoleGuid
+    roleDefinitionGuid: '4633458b-17de-408a-b874-0445c86b69e6' // Key Vault Secrets User
   }
 }
