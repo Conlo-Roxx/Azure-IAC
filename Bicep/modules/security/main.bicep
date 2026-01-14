@@ -2,7 +2,7 @@
 param keyVaultName string
 
 @description('Location for Key Vault')
-param location string = resourceGroup().location
+param location string 
 
 @description('Enable soft delete')
 param enableSoftDelete bool = false
@@ -10,7 +10,7 @@ param enableSoftDelete bool = false
 @description('Enable purge protection')
 param enablePurgeProtection bool = false
 
-resource kv 'Microsoft.KeyVault/vaults@2023-07-01' = {
+resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
   name: keyVaultName
   location: location
   properties: {
@@ -29,5 +29,5 @@ resource kv 'Microsoft.KeyVault/vaults@2023-07-01' = {
   }
 }
 
-output vaultId string = kv.id
-output vaultName string = kv.name
+output vaultId string = keyVault.id
+output vaultName string = keyVault.name

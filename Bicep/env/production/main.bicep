@@ -3,10 +3,17 @@ param adminUsername string
 @secure()
 param adminPassword string
 
+module keyVault '../../modules/security/main.bicep' = {
+  name: 'keyVault'
+  params: {
+    keyVaultName: 'ryan-kv'
+    location: location
+  }
+}
 module network '../../modules/network/main.bicep' = {
   name: 'network'
   params: {
-    vnetName: 'learn-vnet'
+    vnetName: 'ryan-vnet'
     location: location
   }
 }
@@ -14,7 +21,7 @@ module network '../../modules/network/main.bicep' = {
 module compute '../../modules/compute/main.bicep' = {
   name: 'compute'
   params: {
-    vmName: 'learn-vm'
+    vmName: 'ryan-vm'
     location: location
     subnetId: network.outputs.subnetId
     adminUsername: adminUsername
