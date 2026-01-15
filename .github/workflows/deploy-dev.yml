@@ -1,12 +1,8 @@
-name: Validate Bicep Deployment - Development
+name: Deploy Deployment Bicep
 
 on:
   workflow_dispatch:       
-  push:
-    branches:
-      - main                # optional: run on pushes to main
-
-
+  
 permissions:
     id-token: write       
     contents: read
@@ -33,7 +29,7 @@ jobs:
 
       - name: Azure deployment validation 
         run: |
-          az deployment group validate \
+          az deployment group create \
             --resource-group test-iac-rg-dev \
             --template-file Bicep/env/production/main.bicep \
             --parameters @Bicep/env/production/params.prod.json \
