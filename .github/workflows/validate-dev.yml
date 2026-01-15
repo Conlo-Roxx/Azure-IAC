@@ -36,5 +36,5 @@ jobs:
           az deployment group validate \
             --resource-group test-iac-rg-dev \
             --template-file Bicep/env/production/main.bicep \
-            --parameters @Bicep/env/production/params.prod.json \
+            --parameters @Bicep/env/dev/params.dev.json \
             --parameters adminPassword="${{ secrets.ADMIN_PASSWORD_VM }}"
