@@ -1,0 +1,15 @@
+name: Pull Request - Bicep Lint & Build Check
+on: [pull_request]
+
+jobs:
+  bicep-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Azure CLI
+        uses: azure/setup-azure-cli@v3
+
+      - name: Bicep build 
+        run: |
+          az bicep build --file Bicep/env/production/main.bicep --outfile /tmp/main.json
