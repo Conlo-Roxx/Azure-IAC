@@ -1,13 +1,14 @@
 param location string = resourceGroup().location
 param adminUsername string
 @secure()
-param adminPassword string
+param adminPassword string 
 
 module keyVault '../../modules/security/main.bicep' = {
   name: 'keyVault'
   params: {
     keyVaultName: 'ryan-kv'
     location: location
+    adminPassword: adminPassword
   }
 }
 module network '../../modules/network/main.bicep' = {

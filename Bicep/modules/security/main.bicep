@@ -7,6 +7,10 @@ param location string
 @description('Enable soft delete')
 param enableSoftDelete bool = false
 
+@secure()
+@description('VM admin password to store as secret')
+param adminPassword string
+
 resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
   name: keyVaultName
   location: location
@@ -23,7 +27,13 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
     enableSoftDelete: enableSoftDelete
     accessPolicies: []
   }
-}
 
+  resource vmAdminSecret 'secrets@2022-07-01' = {
+  name: 'vm-admin-password'
+  properties: {
+    value: adminPassword
+    }
+  }
+}
 output vaultId string = keyVault.id
 output vaultName string = keyVault.name

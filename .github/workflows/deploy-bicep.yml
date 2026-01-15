@@ -27,4 +27,5 @@ jobs:
           az deployment group create \
             --resource-group test-iac-rg-prod \
             --template-file Bicep/env/production/main.bicep \
-            --parameters @Bicep/env/production/params.prod.json
+            --parameters Bicep/env/production/params.prod.json \
+            --parameters adminPassword="${{ secrets.ADMIN_PASSWORD_VM }}"
