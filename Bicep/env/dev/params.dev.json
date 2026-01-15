@@ -9,13 +9,13 @@
       "value": ""
     },
     "keyVaultName": {
-      "value": "ryan-kv"
+      "value": "ryan-kv-dev"
     },
     "vnetName": {
-      "value": "ryan-vnet"
+      "value": "ryan-vnet-dev"
     },    
     "vmName": {
-      "value": "ryan-vm"
+      "value": "ryan-vm-dev"
     }  
   }
 }
