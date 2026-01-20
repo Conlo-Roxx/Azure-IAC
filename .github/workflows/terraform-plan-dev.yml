@@ -1,4 +1,4 @@
-name: terraform-plan
+name: Terraform Plan - Dev Environment
 
 on:
   workflow_dispatch:
