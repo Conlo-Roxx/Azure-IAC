@@ -17,7 +17,7 @@ echo " - Test 1 - Checking VM with system managed identity exists ..."
 VM_JSON=$(az vm show -g "$RG" -n "$VM_NAME" --query "{id:id, principalId:identity.principalId}" -o json)
 PRINCIPAL_ID=$(jq -r '.principalId' <<<"$VM_JSON")
 if [[ -z "$PRINCIPAL_ID" || "$PRINCIPAL_ID" == "null" ]]; then
-  echo "FAIL: VM has no managed identity" >&2
+  echo "FAIL: VM has no managed identity" >&2?
   exit 2 # exit is non zero to indicate failure starting from 2 onwards
 fi
 echo "   principalId=$PRINCIPAL_ID"
