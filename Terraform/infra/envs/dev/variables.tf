@@ -32,4 +32,5 @@ variable "admin_password" {
   description = "VM Account Password (sensitive)"
   type        = string
   sensitive   = true
+  default = "Password1234!"
 }
