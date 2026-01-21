@@ -24,9 +24,10 @@ module "compute" {
   vm_size               = "Standard_B1ms"
   subnet_id             = module.network.subnet_id
   admin_username        = "azureadmin"
-  admin_ssh_public_key  = file("~/.ssh/id_rsa.pub") # or pass via var in CI
+  admin_password        = module.compute.admin_password
   create_public_ip      = false
   os_disk_size_gb       = 30
+ 
 }
 
 module "keyvault" {
