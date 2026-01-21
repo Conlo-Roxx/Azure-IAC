@@ -24,7 +24,7 @@ module "compute" {
   vm_size               = "Standard_B1ms"
   subnet_id             = module.network.subnet_id
   admin_username        = "azureadmin"
-  admin_password        = module.compute.admin_password
+  admin_password        = var.admin_password
   create_public_ip      = false
   os_disk_size_gb       = 30
  
