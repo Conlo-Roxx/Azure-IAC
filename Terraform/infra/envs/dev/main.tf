@@ -34,7 +34,7 @@ module "keyvault" {
   source              = "../../modules/keyvault"
   resource_group_name = module.network.resource_group_name
   location            = module.network.location
-  key_vault_name      = "${var.name_prefix}-${var.environment}-kv"
+  key_vault_name      = "${var.name_prefix}-${var.environment}-2907-kv"
   tenant_id           = data.azurerm_client_config.current.tenant_id
   # adjust defaults via variables as needed
 }
