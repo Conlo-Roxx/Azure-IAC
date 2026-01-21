@@ -67,9 +67,3 @@ variable "image_version" {
   type    = string
   default = "latest"
 }
-
-variable "admin_ssh_public_key" {
-  type        = string
-  description = "SSH public key for admin user (if using SSH key authentication)."
-  default     = ""
-}
