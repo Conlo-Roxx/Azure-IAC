@@ -36,11 +36,6 @@ variable "admin_password" {
   default     = "Password1234!" # only for demo; do not use in production
 }
 
-variable "admin_ssh_public_key" {
-  type        = string
-  description = "Public SSH key (openssh format) for the admin user. Recommended to use."
-}
-
 variable "create_public_ip" {
   type        = bool
   description = "Whether to create and attach a Public IP to the NIC."
@@ -71,4 +66,10 @@ variable "image_sku" {
 variable "image_version" {
   type    = string
   default = "latest"
+}
+
+variable "admin_ssh_public_key" {
+  type        = string
+  description = "SSH public key for admin user (if using SSH key authentication)."
+  default     = ""
 }

@@ -27,3 +27,9 @@ variable "subnet_address_prefixes" {
   description = "Address prefixes for the subnet."
   default     = ["10.10.1.0/24"]
 }
+
+variable "admin_password" {
+  description = "VM Account Password (sensitive)"
+  type        = string
+  sensitive   = true
+}

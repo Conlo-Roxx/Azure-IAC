@@ -25,6 +25,7 @@ module "compute" {
   subnet_id             = module.network.subnet_id
   admin_username        = "azureadmin"
   admin_password        = module.compute.admin_password
+  admin_ssh_public_key  = module.compute.admin_ssh_public_key
   create_public_ip      = false
   os_disk_size_gb       = 30
  
