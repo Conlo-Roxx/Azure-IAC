@@ -1,6 +1,9 @@
 name: Pull Request - Bicep Lint & Build Check
-on: [pull_request]
 
+on: 
+  pull_request:
+    paths:
+    - 'Bicep/**'
 jobs:
   bicep-check:
     runs-on: ubuntu-latest
