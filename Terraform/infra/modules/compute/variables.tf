@@ -30,6 +30,12 @@ variable "admin_username" {
   default     = "azureadmin"
 }
 
+variable "admin_password" {
+  type        = string
+  description = "Admin password for the Linux VM. Recommended to use SSH keys instead."
+  default     = "Password1234!" # only for demo; do not use in production
+}
+
 variable "admin_ssh_public_key" {
   type        = string
   description = "Public SSH key (openssh format) for the admin user. Recommended to use."
