@@ -33,7 +33,6 @@ variable "admin_username" {
 variable "admin_password" {
   type        = string
   description = "Admin password for the Linux VM. Recommended to use SSH keys instead."
-  default     = "Password1234!" # only for demo; do not use in production
 }
 
 variable "create_public_ip" {
