@@ -6,7 +6,7 @@ resource "azurerm_key_vault" "kv" {
   sku_name                    = var.sku_name
 
   # Enable role-based access control for data plane operations (secrets/keys/certs)
-  rbac_authorization_enabled  = true
+  rbac_authorization_enabled = true
 
   # Safety features (adjust as needed)
    purge_protection_enabled    = var.purge_protection_enabled

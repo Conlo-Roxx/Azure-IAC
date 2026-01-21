@@ -19,8 +19,3 @@ output "identity_principal_id" {
   value = azurerm_linux_virtual_machine.vm.identity[0].principal_id
   description = "Principal (object) id for the system assigned managed identity."
 }
-
-output "identity_client_id" {
-  value = azurerm_linux_virtual_machine.vm.identity[0].client_id
-  description = "Client id for the system assigned managed identity (useful for some SDKs)."
-}
