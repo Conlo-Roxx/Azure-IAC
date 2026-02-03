@@ -31,4 +31,4 @@ jobs:
             --parameters Bicep/env/production/params.prod.json \
             --parameters adminPassword="${{ secrets.ADMIN_PASSWORD_VM }}" \
             --action-on-unmanage detachAll \
-            --deny-settings-mode none
+            --deny-settings-mode DenyWriteAndDelete
