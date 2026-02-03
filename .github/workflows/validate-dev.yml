@@ -4,7 +4,9 @@ on:
   workflow_dispatch:       
   push:
     branches:
-      - main                # optional: run on pushes to main
+      - main  
+    paths:
+      - 'Bicep/**'              
 
 
 permissions:
