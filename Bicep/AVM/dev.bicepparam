@@ -14,3 +14,9 @@ param roleAssignments = [
     roleDefinitionIdOrName: 'Key Vault Secrets User' // example role definition id, replace with actual
   }
 ]
+
+param vNetName = 'avm-vnet-01'
+param location = 'uksouth'
+param addressPrefixes = [
+  '10.0.0.0/16'
+]
