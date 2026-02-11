@@ -26,5 +26,5 @@ jobs:
         run: |
           az deployment group create \
             --resource-group test-iac-rg-avm \
-            --template-file Bicep/avm/main.bicep \
-            --parameters Bicep/avm/dev.bicepparam \
+            --template-file Bicep/AVM/main.bicep \
+            --parameters Bicep/AVM/dev.bicepparam \
