@@ -28,4 +28,3 @@ jobs:
             --resource-group test-iac-rg-avm \
             --template-file Bicep/avm/main.bicep \
             --parameters Bicep/avm/dev.bicepparam \
-            // --parameters adminPassword="${{ secrets.ADMIN_PASSWORD_VM }}"
