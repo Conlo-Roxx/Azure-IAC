@@ -11,7 +11,11 @@ param subnets = [
     addressPrefix: '10.0.1.0/24'
   }
   {
-    name: 'subnet1'
-    addressPrefix: '10.0.1.0/24'
-}
+    name: 'subnet2'
+    addressPrefix: '10.0.2.0/24'
+  }
+  {
+    name: 'subnet3'
+    addressPrefix: '10.0.3.0/24'
+  }
 ]
